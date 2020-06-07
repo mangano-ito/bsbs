@@ -13,11 +13,11 @@ bsbs
 
 ## See Example
 
-![Example Report](./docs/assets/example_report.png)
-
 See example report here:
 
 https://mangano-ito.github.io/bsbs/
+
+![Example Report](./docs/assets/example_report.png)
 
 and its configurations:
 
@@ -68,7 +68,7 @@ and its configurations:
 
 ## Environment Variables
 
-You can also always give your default Environment Variables by placing `.env` file. See `example.env` for example.
+You can also always give your default Environment Variables by placing `.env` file. See [`example.env`](https://github.com/mangano-ito/bsbs/blob/master/example.env) for example.
 
 ### `BROWSERSTACK_USERNAME` (Required unless given in capabilities file)
 
