@@ -1,6 +1,6 @@
 # BSBS
 
-A BackstopJS-like Visual Regression Testing Tool for BrowserStack Automate
+A [BackstopJS](https://github.com/garris/BackstopJS)-like Visual Regression Testing Tool for [BrowserStack Automate](https://www.browserstack.com/automate)
 
 ```sh
 bsbs
