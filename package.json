@@ -1,11 +1,19 @@
 {
   "name": "BSBS",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "BackstopJS-like Visual Regression Tests for BrowserStack Automate",
-  "main": "src/main.ts",
+  "main": "src/main.js",
   "scripts": {
     "start": "ts-node src/main.ts",
+    "build": "tsc -p .",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "bsbs": "src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mangano-ito/bsbs.git"
   },
   "author": "mangano-ito",
   "license": "CC0-1.0",
