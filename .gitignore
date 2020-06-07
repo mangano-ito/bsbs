@@ -1,0 +1,8 @@
+artifacts/
+node_modules/
+.env
+backstop.js
+backstop.json
+capabilities.js
+capabilities.json
+!.gitkeep
