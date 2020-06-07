@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>BSBS Report: {{id}}</title>
+        <link rel="stylesheet" href="./report.css" />
+    </head>
+    <body data-revealed="all">
+        <h1>Report: {{id}}</h1>
+
+        {{#with capabilities}}
+        <aside id="capabilities">
+            <ul>
+                <li>OS: {{os}} {{os_version}} </li>
+                <li>Browser: {{browserName}} {{browser_version}}</li>
+                <li>Resolution: {{resolution}}</li>
+            </ul>
+        </aside>
+        {{/with}}
+       
+        <nav id="controls">
+            <button class="reveal-all">all</button>
+            <button class="reveal-passed-only">{{passedCount}} passed</button>
+            <button class="reveal-failed-only">{{failedCount}} failed</button>
+        </nav>
+
+        {{#each scenarios}}
+        <article id="scenario--{{label}}-{{index}}" class="scenario {{#if matched}}passed{{else}}failed{{/if}}">
+            <h2>{{label}}-{{index}}</h2>
+            <ul class="scenario--meta">
+                <li>Selector: {{selector}}</li>
+                <li>Difference: {{percent}}</li>
+            </ul>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th class="reference"><a href="{{referenceUrl}}" title="reference">Reference</a></th>
+                        <th class="test"><a href="{{testUrl}}" title="test">Test</a></th>
+                        <th class="difference">Difference</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="reference">
+                            <a href="{{referenceImagePath}}">
+                                <img src="{{referenceImagePath}}" />
+                            </a>
+                        </td>
+                        <td class="test">
+                            <a href="{{testImagePath}}" />
+                                <img src="{{testImagePath}}" />
+                            </a>
+                        </td>
+                        <td class="difference">
+                            <a href="{{differenceImagePath}}" />
+                                <img src="{{differenceImagePath}}" />
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+        {{/each}}
+
+        <style>
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+article.scenario {
+    margin: 2rem 0.5rem;
+    padding: 0 0.5rem 0 1rem;
+}
+
+.scenario.passed {
+    border-left: thick solid hsl(100deg, 50%, 60%);
+}
+body[data-revealed="passed"] .scenario:not(.passed),
+body[data-revealed="failed"] .scenario:not(.failed) {
+    display: none;
+}
+.scenario.failed {
+    border-left: thick solid hsl(0deg, 50%, 60%);
+}
+
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: thin solid #aaa;
+    padding: 0.25rem;
+}
+
+th {
+    background-color: #ddd;
+}
+
+.scenario.passed table .difference {
+    display: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+nav {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+}
+
+button {
+    border: thin solid hsl(100deg, 0%, 60%);
+    background-color: hsl(100deg, 0%, 90%);
+    border-color: hsl(100deg, 0%, 25%);
+    border-radius: 0.25rem;
+    color: #000;
+    padding: 1rem;
+    min-width: 10rem;
+    font-size: 1rem;
+    opacity: 0.4;
+    cursor: pointer;
+}
+button:hover {
+    opacity: 0.6;
+}
+button.reveal-passed-only {
+    background-color: hsl(100deg, 50%, 60%);
+    border-color: hsl(100deg, 50%, 25%);
+}
+button.reveal-failed-only {
+    background-color: hsl(0deg, 50%, 60%);
+    border-color: hsl(0deg, 50%, 25%);
+    color: #fff;
+}
+body[data-revealed="all"] button.reveal-all,
+body[data-revealed="passed"] button.reveal-passed-only,
+body[data-revealed="failed"] button.reveal-failed-only {
+    font-weight: bold;
+    opacity: 1;
+}
+
+        </style>
+        <script>
+document.querySelector('.reveal-all').addEventListener('click', () => {
+    document.body.dataset['revealed'] = 'all';
+});
+document.querySelector('.reveal-passed-only').addEventListener('click', () => {
+    document.body.dataset['revealed'] = 'passed';
+});
+document.querySelector('.reveal-failed-only').addEventListener('click', () => {
+    document.body.dataset['revealed'] = 'failed';
+});
+        </script>
+    </body>
+</html>
