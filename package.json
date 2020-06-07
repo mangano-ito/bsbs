@@ -11,6 +11,7 @@
   "bin": {
     "bsbs": "src/main.js"
   },
+  "files": ["src"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mangano-ito/bsbs.git"
