@@ -1,5 +1,5 @@
 {
-  "name": "BSBS",
+  "name": "bsbs",
   "version": "0.1.0",
   "description": "BackstopJS-like Visual Regression Tests for BrowserStack Automate",
   "main": "src/main.js",
