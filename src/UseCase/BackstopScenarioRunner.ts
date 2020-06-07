@@ -92,6 +92,5 @@ export class BackstopScenarioRunner {
         await removeSelectorUseCase(this.scenario, this.helper);
 
         await captureElementsUseCase(this.scenario, this.helper, this.repo);
-        // capture entire page
     }
 }
