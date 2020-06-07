@@ -13,34 +13,44 @@ bsbs
 
 ## See Example
 
-Example Report: (TBD)
-Configurations: (TBD)
+![Example Report](./docs/assets/example_report.png)
+
+See example report here:
+
+https://mangano-ito.github.io/bsbs/
+
+and its configurations:
+
+- https://github.com/mangano-ito/bsbs/blob/gh-pages/backstop.js
+- https://github.com/mangano-ito/bsbs/blob/gh-pages/capabilities.json
 
 ## Usage
 
-1. Capture Reference Pages:
+1. Capture Reference Pages: <br />
    `bsbs --mode=reference --file=backstop.json --capabilities=capabilities.json`
-2. Capture Test Pages:
+2. Capture Test Pages: <br />
    `bsbs --mode=test --file=backstop.json --capabilities=capabilities.json`
-3. Compare and Generate Test Report:
+3. Compare and Generate Test Report: <br />
    `bsbs --mode=report --file=backstop.json --capabilities=capabilities.json`
 
 ## Options
 
 ### `--mode`
 
-  reference: run tests on reference pages
-  test:      run tests on test pages
-  report:    generate test reports (reference & test must be done before this)
+- `reference`: run tests on reference pages
+- `test`: run tests on test pages
+- `report`: generate test reports (reference & test must be done before this)
 
 ### `--file`
 
   Path to BackstopJS Test: `backstop.json` | `backstop.js`
+
   (see https://github.com/garris/BackstopJS/tree/e4ef74b0f25c27125dffab1b14237f924dbf597e#using-backstopjs)
 
 ### `--capabilities`
 
   Path to Selenium Capabilities Configuration for BrowserStack Automate.
+
   (see https://www.browserstack.com/automate/capabilities)
 
   This file also can be provided in `.json` (`{ ... }`) or in `.js` (with `module.exports = { ... };`)
@@ -53,36 +63,45 @@ Configurations: (TBD)
 ### `--local` (Optional)
 
   enable BrowserStack local testing (using your internal network)
+
   (see https://www.browserstack.com/automate/node#setting-local-tunnel)
 
 ## Environment Variables
 
+You can also always give your default Environment Variables by placing `.env` file. See `example.env` for example.
+
 ### `BROWSERSTACK_USERNAME` (Required unless given in capabilities file)
 
   The User ID for BrowserStack Automate
+
   (see https://www.browserstack.com/accounts/settings)
 
 ### `BROWSERSTACK_ACCESS_KEY` (Required unless given in capabilities file)
 
   The Access Key for BrowserStack Automate
+
   (see https://www.browserstack.com/accounts/settings)
 
 ### `ARTIFACTS_REFERENCE_PATH` (Optional)
 
   Path to the Directory for Reference Screenshots
+
   (default: `${working directory}/artifacts/reference/`)
 
 ### `ARTIFACTS_TEST_PATH` (Optional)
 
   Path to the Directory for Test Screenshots
+
   (default: `${working directory}/artifacts/test/`)
 
 ### `ARTIFACTS_DIFFERENCE_PATH` (Optional)
 
   Path to the Directory for Difference Images
+
   (default: `${working directory}/artifacts/difference/`)
 
 ### `ARTIFACTS_REPORT_PATH` (Optional)
 
   Path to the Directory for Test Reports
+
   (default: `${working directory}/artifacts/`)
