@@ -1,0 +1,30 @@
+{
+  "name": "BSBS",
+  "version": "1.0.0",
+  "description": "BackstopJS-like Visual Regression Tests for BrowserStack Automate",
+  "main": "src/main.ts",
+  "scripts": {
+    "start": "ts-node src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mangano-ito",
+  "license": "ISC",
+  "dependencies": {
+    "command-line-args": "^5.1.1",
+    "dotenv": "^8.2.0",
+    "handlebars": "^4.7.6",
+    "jimp": "^0.13.0",
+    "open": "^7.0.4",
+    "selenium-webdriver": "^4.0.0-alpha.7",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "devDependencies": {
+    "@types/command-line-args": "^5.0.0",
+    "@types/handlebars": "^4.1.0",
+    "@types/jimp": "^0.2.28",
+    "@types/node": "^14.0.11",
+    "@types/open": "^6.2.1",
+    "@types/selenium-webdriver": "^4.0.9"
+  }
+}
