@@ -3,7 +3,7 @@
 A [BackstopJS](https://github.com/garris/BackstopJS)-like Visual Regression Testing Tool for [BrowserStack Automate](https://www.browserstack.com/automate)
 
 ```sh
-bsbs
+npx bsbs
   --mode=(reference|test|report)
   --file=<path to the backstop.json or backstop.js>
   --capabilities=<path to the selenium capability config>
@@ -27,11 +27,11 @@ and its configurations:
 ## Usage
 
 1. Capture Reference Pages: <br />
-   `bsbs --mode=reference --file=backstop.json --capabilities=capabilities.json`
+   `npx bsbs --mode=reference --file=backstop.json --capabilities=capabilities.json`
 2. Capture Test Pages: <br />
-   `bsbs --mode=test --file=backstop.json --capabilities=capabilities.json`
+   `npx bsbs --mode=test --file=backstop.json --capabilities=capabilities.json`
 3. Compare and Generate Test Report: <br />
-   `bsbs --mode=report --file=backstop.json --capabilities=capabilities.json`
+   `npx bsbs --mode=report --file=backstop.json --capabilities=capabilities.json`
 
 ## Options
 

@@ -5,7 +5,7 @@ BSBS
 
 A BackstopJS-like Visual Regression Testing Tool with BrowserStack Automate
 
-bsbs
+npx bsbs
   --mode=(reference|test|report)
   --file=<path to the backstop.json or backstop.js>
   --capabilities=<path to the selenium capability config>
