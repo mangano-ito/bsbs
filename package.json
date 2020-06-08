@@ -1,6 +1,6 @@
 {
   "name": "bsbs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "BackstopJS-like Visual Regression Tests for BrowserStack Automate",
   "main": "bin/index.js",
   "scripts": {
